@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Add Products</title>
+
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="form-v8">
+	<div class="page-content">
+		<div class="form-v8-content">
+			<div class="form-left">
+				<img src="images/form-v8.jpg" alt="form">
+			</div>
+			<div class="form-right">
+				<div class="tab">
+					<div class="tab-inner">
+						<button class="tablinks" onclick="openCity(event, 'sign-up')" id="defaultOpen">Add Products</button>
+					</div>
+				
+				</div>
+				<form class="form-detail" action="#" method="post" th:action="@{/saveproduct}"  th:object="${product}">
+					<div class="tabcontent" id="sign-up">
+						<div class="form-row">
+							<label class="form-row-inner">
+								<input type="text" name="full_name" id="full_name"  th:field="*{name}" class="input-text" required>
+								<span class="label">Product name</span>
+		  						<span class="border"></span>
+							</label>
+						</div>
+						<br>
+						<div class="form-row">
+							<label class="form-row-inner">
+								<input type="text" name="your_email" id="your_email" th:field="*{brand}"  class="input-text" required>
+								<span class="label">Product brand</span>
+		  						<span class="border"></span>
+							</label>
+						</div>
+						<br>
+						<div class="form-row">
+							<label class="form-row-inner">
+								<input type="text" name="password" id="password"  th:field="*{price}" class="input-text" required>
+								<span class="label">Product price</span>
+								<span class="border"></span>
+							</label>
+						</div>
+						<br>
+						<div class="form-row-last">
+							<input type="submit" name="register" class="register" value="save">
+						</div>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>
